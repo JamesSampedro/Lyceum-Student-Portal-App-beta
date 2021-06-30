@@ -9,8 +9,6 @@ Public Class FormViewStudentGrades
         'TODO: This line of code loads data into the 'Eclair_Student_PortalDataSet2.tblGrades' table. You can move, or remove it, as needed.
         Me.TblGradesTableAdapter.Fill(Me.Eclair_Student_PortalDataSet2.tblGrades)
 
-
-
     End Sub
 
     Private Sub dgvStudentList_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStudentList.CellClick
@@ -22,6 +20,7 @@ Public Class FormViewStudentGrades
         'Fetch the cell data to textbox value
         i = dgvStudentList.CurrentRow.Index
         Me.txtboxStudentID.Text = dgvStudentList.Item(0, i).Value
+
     End Sub
 
     Private Sub btnView1stSem_Click(sender As Object, e As EventArgs) Handles btnView1stSem.Click
@@ -49,10 +48,6 @@ Public Class FormViewStudentGrades
         adapter2ndsem.Fill(table2ndsem)
 
         dgv2ndSem.DataSource = table2ndsem.DefaultView
-
-    End Sub
-
-    Private Sub dgv1stSem_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 End Class
