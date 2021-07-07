@@ -159,4 +159,11 @@ Public Class FormModifyGrades
 
     End Sub
 
+    Private Sub dgvGradetable_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGradetable.CellContentClick
+
+    End Sub
+
+    Private Sub dgvStudenttable_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStudenttable.CellContentClick
+
+    End Sub
 End Class

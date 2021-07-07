@@ -199,4 +199,8 @@ Public Class FormAddAdmin
         Me.txtboxPassword.Text = dgvEmpLogin.Item(1, i).Value
         Me.cmbUserType.Text = dgvEmpLogin.Item(2, i).Value
     End Sub
+
+    Private Sub dgvEmployeelist_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmployeelist.CellContentClick
+
+    End Sub
 End Class

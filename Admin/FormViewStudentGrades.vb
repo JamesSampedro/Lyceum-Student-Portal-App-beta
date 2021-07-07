@@ -9,6 +9,20 @@ Public Class FormViewStudentGrades
         'TODO: This line of code loads data into the 'Eclair_Student_PortalDataSet2.tblGrades' table. You can move, or remove it, as needed.
         Me.TblGradesTableAdapter.Fill(Me.Eclair_Student_PortalDataSet2.tblGrades)
 
+        Dim conn As New OleDbConnection(cs)
+        dgvStudentList.DataSource = Nothing
+        dgvStudentList.Refresh()
+
+        Dim str As String = "SELECT * FROM tblStudent"
+        Using cmd As New OleDb.OleDbCommand(str, conn)
+            Using da As New OleDbDataAdapter(cmd)
+                Using newtable As New DataTable
+                    da.Fill(newtable)
+                    dgvStudentList.DataSource = newtable
+                End Using
+            End Using
+        End Using
+
     End Sub
 
     Private Sub dgvStudentList_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStudentList.CellClick
@@ -48,6 +62,10 @@ Public Class FormViewStudentGrades
         adapter2ndsem.Fill(table2ndsem)
 
         dgv2ndSem.DataSource = table2ndsem.DefaultView
+
+    End Sub
+
+    Private Sub dgvStudentList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStudentList.CellContentClick
 
     End Sub
 End Class

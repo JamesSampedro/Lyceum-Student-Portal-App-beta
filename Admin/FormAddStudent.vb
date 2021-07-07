@@ -199,4 +199,8 @@ Public Class FormAddStudent
         Me.txtboxPassword.Text = dgvStudLogin.Item(1, i).Value
         Me.cmbUserType.Text = dgvStudLogin.Item(2, i).Value
     End Sub
+
+    Private Sub dgvStudLogin_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStudLogin.CellContentClick
+
+    End Sub
 End Class
